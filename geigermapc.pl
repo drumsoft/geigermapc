@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
 my %param = (
-	id      => "mitaka",
-	key     => "80306faf2f262875d4c875572bf514352599f855",
+	id      => "abc",
+	key     => "xxxxxxxxxx",
 	url     => "http://drumsoft.com/gm/",
 	readusb => "./read-usb-geiger"
 );
