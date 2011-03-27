@@ -1,8 +1,27 @@
 geigemapc README-linux
 
-libusb 1.0 または libudev ライブラリとヘッダが必要なので、
-libusb-devel-1.0.*, libusb-1.0.*-dev, libudev-dev, libudev-devel といった名前の
-パッケージをインストールしておく
+*まだ動作していません*
+
+下記環境で動作確認しようとしていますが Kernel Panic が発生
+して動作しません。アドバイスあったらよろしくお願いします。
+
+CentOS 5
+Linux version 2.6.18-194.32.1.el5 (mockbuild@builder10.centos.org) (gcc version 4.1.2 20080704 (Red Hat 4.1.2-48)) #1 SMP Wed Jan 5 17:53:09 EST 2011
+
+libusb 1.0.8
+http://sourceforge.net/projects/libusb/files/libusb-1.0/
+
+hidapi http://www.signal11.us/oss/hidapi/ - February 09, 2011
+
+--------
+
+libusb 1.0 または libudev ライブラリとヘッダが必要。
+パッケージ名だと以下の様なやつ
+libusb-1.0.*-dev
+libusb-devel-1.0.*
+libudev-dev
+libudev-devel
+
 
 [build / ビルド]
 $ cd linux
@@ -24,5 +43,5 @@ $ cp geigermapc.pl read-usb-geiger {任意のパス}
 $ chmod a+x {任意のパス}/geigermapc.pl {任意のパス}/read-usb-geiger
 
 [set periodic run / 定期実行の設定]
-
+crontab を使用する
 

@@ -20,7 +20,7 @@ geigermapc.pl
 [ビルド,インストール,定期実行]
 各プラットフォーム別の情報は以下のファイルをご覧下さい。
 
-README-linux
-README-mac
-README-windows
+README-mac      OS 10.6 で確認済み
+README-linux    動作していません
+README-windows  動作していません
 
