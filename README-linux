@@ -87,10 +87,3 @@ make[2]: Leaving directory `/home/hrk/src/libusb-1.0.8'
 make[1]: Leaving directory `/home/hrk/src/libusb-1.0.8'
 
 
-$ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-$ make
-
-$ sudo emacs  /etc/ld.so.conf
-	/usr/local/lib を最後に追加
-$ sudo /sbin/ldconfig
-
