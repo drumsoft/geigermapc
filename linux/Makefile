@@ -14,7 +14,8 @@ COBJS=hid-libusb.o
 CPPOBJS=../read-usb-geiger.o
 OBJS=$(COBJS) $(CPPOBJS)
 CFLAGS+=-I../hidapi -Wall -g -c `pkg-config libusb-1.0 --cflags`
-LIBS=`pkg-config libusb-1.0 libudev --libs`
+LIBS=`pkg-config libusb-1.0 --libs`
+# LIBS=`pkg-config libudev --libs`
 
 
 ../read-usb-geiger: $(OBJS)

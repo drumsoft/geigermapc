@@ -33,11 +33,12 @@ int main(int argc, char* argv[]) {
 #endif
 
 	// Send an Output report to request the state (cmd 0x81)
+	buf[0] = 0;
 	buf[1] = 0x81;
-	hid_write(handle, buf, 65);
+	res = hid_write(handle, buf, 2);
 
 	// Read requested state
-	res = hid_read(handle, buf, 7);
+	printf("hid_read: %d\n", res);
 	if (res < 0) {
 		printf("Unable to read()\n");
 		return 1;
@@ -49,7 +50,7 @@ int main(int argc, char* argv[]) {
 	t = (buf[6] << 16) + (buf[5] << 8) + buf[4];
 	time_t timer;
 	time(&timer);
-	printf("%d,%d,%d\n", timer, c, t);
+	printf("%d,%d,%d\n", (int)timer, c, t);
 
 	return 0;
 }

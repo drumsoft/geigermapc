@@ -12,3 +12,4 @@ Release
 *.o
 *.exe
 read-usb-geiger
+*~
