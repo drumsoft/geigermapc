@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
 	res = hid_write(handle, buf, 2);
 
 	// Read requested state
-	printf("hid_read: %d\n", res);
+	res = hid_read(handle, buf, 7);
 	if (res < 0) {
 		printf("Unable to read()\n");
 		return 1;
