@@ -1,0 +1,14 @@
+Debug
+Release
+*.exp
+*.ilk
+*.lib
+*.suo
+*.vcproj.*
+*.ncb
+*.suo
+*.dll
+*.pdb
+*.o
+*.exe
+read-usb-geiger
