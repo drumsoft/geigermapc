@@ -15,10 +15,14 @@ use Digest::SHA1;
 use CGI::Util;
 
 sub main() {
-	my $readusb;
+	my ($usb, $result, $pid);
 	local $/; undef $/;
-	open(my $usb, "$param{'readusb'} |") or die "cannot open $param{'readusb'}";
-	my $result = <$usb>;
+
+	$pid = open($usb, "$param{'readusb'} |") or die "cannot open $param{'readusb'}";
+	$SIG{ALRM} = sub { kill 9, $pid; die "$param{'readusb'} timeouted."; };
+	alarm(10);
+	$result = <$usb>;
+	alarm(0);
 	close($usb);
 
 	if ($result =~ /(\d+),(\d+),(\d+)/) {
