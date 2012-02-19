@@ -20,30 +20,18 @@ $ cp geigermapc.pl read-usb-geiger {任意のパス}
 $ chmod a+x {任意のパス}/geigermapc.pl {任意のパス}/read-usb-geiger
 
 [set periodic run]
-以下のどちらかのファイルを作る
-(自分のアカウントでログイン中に実行する場合)
-~/Library/LaunchAgents/com.drumsoft.geigermapc.plist
-(起動時は常にrootが実行する場合)
-/Library/LaunchDeamon/com.drumsoft.geigermapc.plist
+com.drumsoft.geigermapc.plist ファイルを以下の場所にコピーする
+~/Library/LaunchAgents/
 
-ファイルの中身は以下
+（自分以外のユーザがログインしている間も実行したい場合は
+  /Library/LaunchDeamon/ にコピーする）
 
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>Label</key>
-	<string>com.drumsoft.geigermapc.plist</string>
-	<key>WorkingDirectory</key>
-	<string>{任意のパス}</string>
-	<key>Program</key>
-	<string>./geigermapc.pl</string>
-	<key>StartCalendarInterval</key>
-	<dict/>
-</dict>
-</plist>
+（インストール場所が /Applications では無い場合、
+  com.drumsoft.geigermapc.plist の WorkingDirectory も
+  編集が必要）
 
 設定ファイルを読み込ませる
 launchctl load ~/Library/LaunchAgents/com.drumsoft.geigermapc.plist
-launchctl load /Library/LaunchDeamon/com.drumsoft.geigermapc.plist
+（再起動してもよい）
 
+定期実行時のエラーは ユーティリティ/コンソール で確認できる。

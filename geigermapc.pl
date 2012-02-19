@@ -3,7 +3,7 @@
 my %param = (
 	id      => "abc",
 	key     => "xxxxxxxxxx",
-	url     => "http://drumsoft.com/gm/",
+	url     => "http://gm-jp.org/",
 	readusb => "./read-usb-geiger"
 );
 
